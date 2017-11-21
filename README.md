@@ -19,10 +19,10 @@ npm install https://github.com/clay-run/clay-base-sdk
 Inserting rows:
 
 ```javascript
-const ClayBase = require('clay-base-sdk')
+const Base = require('clay-base-sdk')
 
-const myBase = new ClayBase('fijef30f92hnb') // private key
-const users = myBase.getTable('users')
+const GameBase = new Base('fijef30f92hnb') // private key
+const users = GameBase.getTable('users')
 
 users.insert({
     username: 'playerunkown',
@@ -31,7 +31,7 @@ users.insert({
     // row inserted into the base
 
     // let's query all the players
-    return myBase.findAll()
+    return users.findAll()
 }).then((rows) => {
     // rows = [ { username: 'playerunkown', game: 'battlegrounds }]
 })
@@ -42,10 +42,10 @@ users.insert({
 Clay Base runs on Postgres, which allows you to run raw queries in a totally secure environment.
 
 ```javascript
-const ClayBase = require('clay-base-sdk')
-const myBase = new ClayBase('fijef30f92hnb') // private key
+const Base = require('clay-base-sdk')
+const GameBase = new Base('fijef30f92hnb') // private key
 
-myBase.query(`SELECT * FROM players WHERE username="unkownplayer" LIMIT 1`).then((rows) => {
+GameBase.query(`SELECT * FROM players WHERE username="unkownplayer" LIMIT 1`).then((rows) => {
     // rows = [ { username: 'playerunkown', game: 'battlegrounds }]
 })
 ```
@@ -55,10 +55,10 @@ myBase.query(`SELECT * FROM players WHERE username="unkownplayer" LIMIT 1`).then
 We offer a Javascript friendly interface to query rows in a basic way:
 
 ```javascript
-const ClayBase = require('clay-base-sdk')
+const Base = require('clay-base-sdk')
 
-const myBase = new ClayBase('fijef30f92hnb') // private key
-const users = myBase.getTable('users')
+const GameBase = new Base('fijef30f92hnb') // private key
+const users = GameBase.getTable('users')
 
 users.find({
     where: {
