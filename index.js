@@ -21,7 +21,7 @@ function ClayBaseSDK(key, server) {
         })
     }.bind(this)
 
-    this.select = this.get = function(table) {
+    this.getTable = function(table) {
         if(!this.tables[table]) {
             this.tables[table] = new Table(table, this);
         }
