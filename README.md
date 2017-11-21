@@ -45,6 +45,24 @@ myBase.query(`SELECT * FROM players WHERE username="unkownplayer" LIMIT 1`).then
 })
 ```
 
+## Querying
+
+We offer a Javascript friendly interface to query rows in a basic way:
+
+```javascript
+const ClayBase = require('clay-base-sdk')
+const myBase = new ClayBase('fijef30f92hnb') // private key
+
+myBase.find({
+    where: {
+        username: 'playerunkown'
+    },
+    order: 'createdAt DESC',
+    limit: 1
+}).then((rows) => {
+    // rows = [ { username: 'playerunkown', game: 'battlegrounds }]
+})
+```
 
 ## Bugs
 
