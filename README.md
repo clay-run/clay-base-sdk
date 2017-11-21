@@ -28,8 +28,9 @@ users.insert({
     username: 'playerunkown',
     game: 'battlegrounds'
 }).then(() => {
-    // row insert into the base
+    // row inserted into the base
 
+    // let's query all the players
     return myBase.findAll()
 }).then((rows) => {
     // rows = [ { username: 'playerunkown', game: 'battlegrounds }]
