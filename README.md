@@ -69,3 +69,7 @@ myBase.find({
 ## Bugs
 
 Please report bug and issues in the [issues tab on Github](https://github.com/clay-run/clay-base-sdk/issues).
+
+## Author
+
+This repository is maintained and published by [Clay Labs Inc.](https://clay.run)
