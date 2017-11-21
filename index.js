@@ -9,7 +9,7 @@ function ClayBaseSDK(key, server) {
     /**
      * Do a raw SQL query against the clay base
      */
-    this.query() = function(rawQuery) {
+    this.query = function(rawQuery) {
         return this.api.post('/bases/query').send({
             query: rawQuery
         }).then((res) => {
