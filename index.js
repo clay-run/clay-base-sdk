@@ -2,9 +2,11 @@
  * CLAY BASE SDK
  */
 var API = require('./api.js')
+var Table = require('./table.js')
 
 function ClayBaseSDK(key, server) {
     this.api = API(server, key);
+    this.tables = {}
 
     /**
      * Do a raw SQL query against the clay base
@@ -17,6 +19,14 @@ function ClayBaseSDK(key, server) {
             
             return Promise.resolve(result);
         })
+    }.bind(this)
+
+    this.select = this.get = function(table) {
+        if(!this.tables[table]) {
+            this.tables[table] = new Table(table, this);
+        }
+
+        return this.tables[tables]
     }.bind(this)
 }
 
