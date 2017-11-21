@@ -2,6 +2,8 @@ module.exports = function Table(tableName, db) {
     this.findAll = function() {
         return db.api.post(`/bases/find`).send({
             table: tableName
+        }).then((res) => {
+            return Promise.resolve(res.body.result);
         });
     }
 
@@ -9,6 +11,8 @@ module.exports = function Table(tableName, db) {
         return db.api.post(`/bases/insert`).send({
             table: tableName,
             values: values
+        }).then((res) => {
+            return Promise.resolve(res.body.result);
         });
     }
 
@@ -16,6 +20,8 @@ module.exports = function Table(tableName, db) {
         return db.api.post(`/bases/find`).send({
             table: tableName,
             config: config
+        }).then((res) => {
+            return Promise.resolve(res.body.result);
         })
     }
 
