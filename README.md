@@ -20,9 +20,11 @@ Inserting rows:
 
 ```javascript
 const ClayBase = require('clay-base-sdk')
-const myBase = new ClayBase('fijef30f92hnb') // private key
 
-myBase.insert('users', {
+const myBase = new ClayBase('fijef30f92hnb') // private key
+const users = myBase.getTable('users')
+
+users.insert({
     username: 'playerunkown',
     game: 'battlegrounds'
 }).then(() => {
@@ -53,9 +55,11 @@ We offer a Javascript friendly interface to query rows in a basic way:
 
 ```javascript
 const ClayBase = require('clay-base-sdk')
-const myBase = new ClayBase('fijef30f92hnb') // private key
 
-myBase.find({
+const myBase = new ClayBase('fijef30f92hnb') // private key
+const users = myBase.getTable('users')
+
+users.find({
     where: {
         username: 'playerunkown'
     },
