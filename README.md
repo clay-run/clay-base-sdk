@@ -1,6 +1,6 @@
 # Clay Base SDK
 
-*What is Clay Base?* [Clay Base](https://base.clay.run) is the serverless stateless database. Ideal for Lambda functions. [Learn more](https://base.clay.run)
+**What is Clay Base?** [Clay Base](https://base.clay.run) is the serverless stateless database. Ideal for Lambda functions. [Learn more](https://base.clay.run)
 
 This SDK connects to Clay Base seemlessly using your Private key.
 
