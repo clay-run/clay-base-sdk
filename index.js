@@ -26,7 +26,7 @@ function ClayBaseSDK(key, server) {
             this.tables[table] = new Table(table, this);
         }
 
-        return this.tables[tables]
+        return this.tables[table]
     }.bind(this)
 }
 
